@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserStory</title>
+</head>
+<body>
+    <script>
+        function YesButton(){
+            var con = confirm("Let the fun begin")
+
+            if(con==true){
+                var name = prompt("Enter your first name","Your first name")
+                localStorage.setItem("name", name);
+
+                if(name!=true){
+                    alert(`Hello ${name} nice to see you`)
+                    
+                    //story example
+                    document.write(`In India there lived a person named ${name}. He was a very good person`)
+
+                }
+
+                if(name==false){
+                    alert("Please enter a valid name")
+                }
+                if(name==null){
+                    alert("You chose not to enter your name. See you again soon...")
+                }
+
+
+            }
+            if(con==false){
+                alert("You chose not to move forward. See you again later")
+            }
+
+            var username = localStorage.getItem("name")
+
+        }
+
+        function NoButton(){
+            document.write("<h3>User does not want to continue...</h3>")
+        }
+    </script>
+    <h1>UserStory</h1>
+    <p>This website will print the story based on your name...</p>
+    <h3>Do you want to continue?</h3>
+    <pre>
+        <button onclick="YesButton()" title="yes">Yes</button>       <button onclick="NoButton()" title="no">No</button>
+    </pre>
+</body>
+</html>
